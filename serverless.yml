@@ -1,0 +1,21 @@
+service: aws-node-express-api-project
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  stage: dev
+  runtime: nodejs12.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  app-api:
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+          cors: true
+      - httpApi:
+          path: /{proxy+}
+          method: any
+          cors: true
