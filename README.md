@@ -81,20 +81,18 @@ curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
 Which should result in the following response:
 
 ```
-{"message":"Hello from root!"}
+null
 ```
 
-Calling the `/hello` path with:
+Calling the `/user` path with:
 
 ```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/hello
+curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/user
 ```
 
 Should result in the following response:
 
-```bash
-{"message":"Hello from path!"}
-```
+- Just html
 
 If you try to invoke a path or method that does not have a configured handler, e.g. with:
 
@@ -105,7 +103,7 @@ curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/nonexistent
 You should receive the following response:
 
 ```bash
-{"error":"Not Found"}
+{"error":"Cannot get"}
 ```
 
 ### Local development
